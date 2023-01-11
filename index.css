@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {    
+    font-family: 'Lato', sans-serif;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.logo-img {
+    width: 100px;
+}
+
+.nav-items {
+    display: flex;
+}
+
+.nav-items > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    border: 1px solid black;
+    width: 15%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.restaurant-card > img {
+    width: 100%;
+}
