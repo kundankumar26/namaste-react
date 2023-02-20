@@ -1,7 +1,9 @@
 import Logo from "../assets/img/food villa.png";
 import { Link } from "react-router-dom";
+import useOnline from "../hooks/useOnline";
 
 const Header = () => {
+    const isOnline = useOnline();
     return (
         <>
             <div className='header-container'>
@@ -14,8 +16,10 @@ const Header = () => {
                         <li className='list-item'><Link to='/about'>About us</Link></li>
                         <li className='list-item'><Link to='/about/profile'>Profile</Link></li>
                         <li className='list-item'><Link to='/contact'>Contact</Link></li>
+                        <li className='list-item'><Link to='/instamart'>Instamart</Link></li>
                     </ul>
                 </div>
+                <h1>{isOnline ? "✅" : "🔴"}</h1>
             </div>
         </>
     );
