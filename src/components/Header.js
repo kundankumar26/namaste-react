@@ -6,17 +6,17 @@ const Header = () => {
     const isOnline = useOnline();
     return (
         <>
-            <div className='header-container'>
+            <div class='flex justify-between place-items-center py-2 px-10 bg-pink-200'>
                 <div>
-                    <img className='logo-img' src={Logo} />
+                    <img className='w-24' src={Logo} />
                 </div>
-                <div className='nav-items'>
-                    <ul>
-                        <li className='list-item'><Link to='/'>Home</Link></li>
-                        <li className='list-item'><Link to='/about'>About us</Link></li>
-                        <li className='list-item'><Link to='/about/profile'>Profile</Link></li>
-                        <li className='list-item'><Link to='/contact'>Contact</Link></li>
-                        <li className='list-item'><Link to='/instamart'>Instamart</Link></li>
+                <div className='nav-items self-center'>
+                    <ul class='flex justify-around'>
+                        <li class='m-2'><Link to='/'>Home</Link></li>
+                        <li className='m-2'><Link to='/about'>About us</Link></li>
+                        <li className='m-2'><Link to='/about/profile'>Profile</Link></li>
+                        <li className='m-2'><Link to='/contact'>Contact</Link></li>
+                        <li className='m-2'><Link to='/instamart'>Instamart</Link></li>
                     </ul>
                 </div>
                 <h1>{isOnline ? "✅" : "🔴"}</h1>
