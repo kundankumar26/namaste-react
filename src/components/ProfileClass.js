@@ -1,6 +1,6 @@
 import React from "react";
 
-class ProfileClass extends React.Component {
+class ProfileclassName extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,7 +11,7 @@ class ProfileClass extends React.Component {
             count1: 0,
             count2: 0
         };
-        console.log('constructor', props);
+        // console.log('constructor', props);
     }
 
     componentDidMount() {
@@ -33,12 +33,12 @@ class ProfileClass extends React.Component {
     }
 
     componentWillUnmount() {
-        console.log('componentWillUnmount will be called to destroy the component');
+        // console.log('componentWillUnmount will be called to destroy the component');
         clearInterval(this.timer);
     }
 
     render() {
-        console.log('render');
+        // console.log('render');
         return (
             <div>
                 <h2>Profile</h2>
@@ -54,4 +54,4 @@ class ProfileClass extends React.Component {
     }
 }
 
-export default ProfileClass;
+export default ProfileclassName;

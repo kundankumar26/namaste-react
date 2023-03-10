@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/ProfileFn';
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
+import UserContext from './utils/userContext';
+import UserContextSecond from './utils/userContextSecond';
 
 const Instamart = lazy(() => import('./components/Instamart'));
 // use of lazy loading
@@ -20,11 +22,19 @@ const Instamart = lazy(() => import('./components/Instamart'));
 // Dynamic Import
 
 const AppLayout = () => {
+    const [user, setUser] = useState({
+        name: 'akshay',
+        email: 'support@kundan.com',
+    });
     return (
         <>
-            <Header />
-            <Outlet/>
-            <Footer />
+            <UserContextSecond.Provider
+             value={{user: user, setUser: setUser}}
+            >
+                <Header />
+                <Outlet/>
+                <Footer />
+            </UserContextSecond.Provider>
         </>
     );
 };
