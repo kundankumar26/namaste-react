@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import useOnline from "../hooks/useOnline";
 import UserContext from "../utils/userContext";
 import UserContextSecond from "../utils/userContextSecond";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const isOnline = useOnline();
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
     return (
         <>
             <div className='flex justify-between place-items-center py-2 px-10 bg-pink-200'>
@@ -19,6 +22,7 @@ const Header = () => {
                         <li className='m-2'><Link to='/about/profile'>Profile</Link></li>
                         <li className='m-2'><Link to='/contact'>Contact</Link></li>
                         <li className='m-2'><Link to='/instamart'>Instamart</Link></li>
+                        <li className='m-2'><Link to='/cart'>Cart - {cartItems.length}</Link></li>
                     </ul>
                 </div>
                 <div className="flex">

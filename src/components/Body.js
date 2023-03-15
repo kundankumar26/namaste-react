@@ -24,7 +24,7 @@ const Body = () => {
 
     if(!allRestaurants) return null;
     const {user, setUser} = useContext(UserContextSecond);
-    {console.log(useContext(UserContextSecond))}
+    // {console.log(useContext(UserContextSecond))}
 
     return allRestaurants?.length === 0 ? (<Shimmer/>) : (
         <>

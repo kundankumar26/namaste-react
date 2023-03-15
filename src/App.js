@@ -11,6 +11,9 @@ import Profile from './components/ProfileFn';
 import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import UserContext from './utils/userContext';
 import UserContextSecond from './utils/userContextSecond';
+import { Provider } from 'react-redux';
+import Cart from './components/cart';
+import store from './utils/store';
 
 const Instamart = lazy(() => import('./components/Instamart'));
 // use of lazy loading
@@ -27,7 +30,7 @@ const AppLayout = () => {
         email: 'support@kundan.com',
     });
     return (
-        <>
+        <Provider store={store}>
             <UserContextSecond.Provider
              value={{user: user, setUser: setUser}}
             >
@@ -35,7 +38,7 @@ const AppLayout = () => {
                 <Outlet/>
                 <Footer />
             </UserContextSecond.Provider>
-        </>
+        </Provider>
     );
 };
 
@@ -73,6 +76,10 @@ const appRouter = createBrowserRouter([
                     <Suspense fallback={<h2>Loading...</h2>}>
                         <Instamart />
                     </Suspense>)
+            },
+            {
+                path: '/cart',
+                element: <Cart/>
             }
         ]
     }
